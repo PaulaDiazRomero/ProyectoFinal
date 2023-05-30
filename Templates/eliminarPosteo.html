@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  {% csrf_token %}
+  <head>
+    {% load static %}
+    {% csrf_token %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title></title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg fixed-bottom" style="background-color: #FF6084;">
+        <div class="container-fluid px-4 px-lg-12">
+            <a class="navbar-brand" style="color: white" href="{% url 'posteos' %}">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" style="color: white; margin-right: 0.5cm; margin-left: 0.5cm"  href="{% url 'crearPosteo' %}">Postear</a></li>
+                  <li class="nav-item"><a class="nav-link" style="color: white; margin-right: 0.5cm; margin-left: 0.5cm"  href="{% url 'perfil' %}">Perfil</a></li>
+              </ul> 
+              <div class="col-md-9"></div>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><a class="nav-link" style="color: white" href="{% url 'logout' %}">Cerrar sesión</a></li>
+              </ul>
+          </div>
+        </div>
+    </nav>
+
+
+<section class="vh-100" style="background-image: url('../../../static/assets/img/nav.jpg')">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100" style="text-align: center">
+
+          <h5 class="mt-6" style="color: #FF6084">Posteo eliminado</h5>
+
+          </div>
+        </div>
+      
+</section>
+<body>
+</html>

@@ -1,0 +1,83 @@
+{% extends "posteos.html" %}
+
+{% load static %}
+{% csrf_token %}
+
+{% block contenidoQueCambia %}
+
+<section class="vh-100" style="background-color: #FF6084">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100" style="text-align: center">
+      <div class="col-xl-7">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+ <div class="card-body text-center" style="height: 13cm; margin-top:0.5cm; margin-bottom:0.7cm; margin-left:1.2cm; margin-right:1.2cm ">
+ 
+  <h3 class="mb-4">Nuevo Post</h3>
+
+  <form id="PosteoCreadoForm" action="{% url 'crearPosteo' %}" method="POST" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
+      {% csrf_token %}
+  
+    <section>
+
+    <div class="input-group mb-1 col-xl-7 justify-content-center align-items-center">
+      <div style="margin-right:1cm; width:6cm">
+      {% csrf_token %}
+
+      <input type="text" name="titulo" class="form-control form-control" />
+      <label class="form-label" for="titulo" >Título</label>
+      </div>
+
+      <div style="width:6cm">
+      {% csrf_token %}
+      <input type="text" name="subtitulo" class="form-control form-control" />
+      <label class="form-label" for="subtitulo" >Subtítulo</label>
+      </div>
+    </div>
+
+   </section>
+    
+    <div class="form-outline col-xl-8 justify-content-center align-items-center; mb-2" style="width:13.7cm">
+      {% csrf_token %}
+      <input type="text" name="cuerpo" class="form-control form-control" style="height:2.5cm" />
+      <label class="form-label" for="cuerpo" >Descripción</label>
+    </div>
+  
+    <section>
+
+      <div class="input-group mb-1 col-xl-7 justify-content-center align-items-center">
+        <div style="margin-right:1cm; width:6cm">
+        {% csrf_token %}
+  
+        <input type="text" name="autor" class="form-control form-control" />
+        <label class="form-label" for="autor" >Autor</label>
+        </div>
+  
+        <div style="width:6cm">
+        {% csrf_token %}
+        <input type="date" name="fecha" class="form-control form-control" />
+        <label class="form-label" for="fecha" >Fecha</label>
+        </div>
+      </div>
+  
+     </section>
+
+     <div class="form-outline col-xl-8 justify-content-center align-items-center; mb-1" style="width:13.7cm">
+      {% csrf_token %}
+     <input type="file" name="imagen" class="form-control form-control" />
+        <label class="form-label mt-1" for="imagen">Imagen</label>
+     </div>
+     
+     <h6 class="text-center mb-2" style="color: black">
+      {{mensaje}}
+    </h6>
+   
+  <section>
+    <button type="submit" style="background-color: #FF6084; color:white; width:3cm" class="btn btn-primary btn-block mb-2 mt-1 btn btn-outline-light">Guardar</button>
+  </section>
+  </div>
+  </div>
+  </div>
+ </div>
+</div>
+</section>
+{% endblock %}

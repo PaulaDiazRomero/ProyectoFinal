@@ -1,0 +1,37 @@
+{% extends "perfil.html" %}
+
+{% load static %}
+{% csrf_token %}
+
+{% block contenidoQueCambia %}
+<section class="vh-100" style="background-color:#FFAF32">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100" style="text-align: center">
+     <div class="col-xl-5">
+      <div class="card shadow-2-strong" style="border-radius: 1rem;">
+        <div class="card-body text-center" style="height: 6cm; margin:0.5cm">
+
+         <h3 class="mb-6">Editar Foto</h3>
+
+        <form id="AvatarForm" action="{% url 'editarAvatar' %}" method="POST" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
+        {% csrf_token %}
+  
+        <div class="form-outline mb-3 col-xl-8">
+        {% csrf_token %}
+        <input type="file" name="imagen" class="form-control form-control" />
+        <label class="form-label mt-3" for="imagen">Nueva imagen</label>
+        </div>
+        <section>
+            <button type="submit" style="background-color: #FFAF32; color:white; margin-right:0.4cm; width:3cm" class="btn btn-primary btn-block mb-2 btn btn-outline-light" href="{% url 'perfil' %}">Guardar</button>
+           
+            <button style="background-color: #FFAF32; width:3cm" class="btn btn-primary mb-2 btn btn-outline-light"><a style="color:white; text-decoration:none" href="{% url 'perfil' %}">Volver</a></button>
+            
+          </section>
+      </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        {% csrf_token %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title></title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg fixed-bottom" style="background-color: #FF6084;">
+            <div class="container-fluid ">
+                <a class="navbar-brand" style="color: white" href="{% url 'inicio' %}">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" style="color: white; margin-right: 0.5cm; margin-left: 0.5cm"  href="{% url 'login' %}">Ingresar</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: white"  href="{% url 'sobremi' %}">Sobre mi</a></li>
+                    </ul> 
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        {% csrf_token %}
+          
+
+          <section class="vh-100" style="background-image: url('../static/assets/img/info.jpg')">
+            <div class="container  h-100">
+              <div class="row d-flex justify-content-left align-items-center h-100" style="text-align: left; margin-left:1cm">
+                <div class="col-xl-7">
+                  <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div style="height: 13.2cm" >
+          
+                      <h2 class="mb-4 mt-5 text-center">Sobre mi</h2>
+                      
+
+                      <h6 class="card-body text-left; mt-1" style="text-align: left; margin-left:1.5cm; margin-right:1.5cm; margin-bottom:0.3cm">
+                        <p class="mb-3">
+                        ¡Hola! Mi nombre es Paula Diaz Romero,
+                        tengo 28 años y soy de la provincia de Tucumán. Actualmente estudio Ingeniería Electrónica
+                        en la Universidad Nacional de Tucumán y complemento mis estudios con los cursos de Coderhouse.
+                        </p>
+                        <p class="mb-3">
+                        Likie es mi proyecto final para el curso de Python. En él quiero reflejar no solo lo aprendido
+                        en clases sino también dejar plasmada mi personalidad con los conocimientos adquiridos en el curso
+                        de Photoshop & Illustrator. En esta página podes compartir lo que te gusta y conocer los gustos
+                        de los demás a través de imágenes.
+                        </p>
+                        ¡Espero que les guste y los invito a seguirme en mis redes sociales!
+                      </h6>
+                            
+                      <div class="media-icons" style="text-align: center">
+                        <a class="btn btn-social mx-1" href="https://www.instagram.com/paudr4/"><i class="fab fa-instagram fa-2x" type="button" style="color: #FF6084"></i></a>
+                        <a class="btn btn-social mx-1" href="https://twitter.com/pau_dr"><i class="fab fa-twitter fa-2x" type="button" style="color: #FF6084" ></i></a>
+                        <a class="btn btn-social mx-1" href="https://www.behance.net/pauladr"><i class="fab fa-behance fa-2x" type="button" style="color: #FF6084"></i></a>
+                      </div>
+                  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        {% csrf_token %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title></title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg fixed-bottom" style="background-color: #FF6084;">
+            <div class="container-fluid px-4 px-lg-12">
+                <a class="navbar-brand" style="color: white" href="{% url 'inicio' %}">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            </div>
+        </nav>
+        <!-- Page Content-->
+       
+        {% csrf_token %}
+        
+
+          <section class="vh-100" style="background-color:#FF6084">
+            <div class="container  h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100" style="text-align: center">
+                <div class="col-xl-5">
+                  <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body mt-4 text-center" style="height: 11cm">
+                     
+                      <h3 class="margin-bottom:2cm">Iniciar sesión</h3>
+
+                      <form action="{% url 'login' %}" method="POST" class="row d-flex justify-content-center align-items-center">
+                        {% csrf_token %}
+                  
+                      <div class="form-outline mb-2 col-xl-9">
+                        {% csrf_token %}
+                        <input type="text" name="username" class="form-control form-control-lg" />
+                        <label class="form-label" for="username" >Usuario</label>
+                      </div>
+          
+                      <div class="form-outline mb-2 col-xl-9">
+                        {% csrf_token %}
+                        <input type="password" name="password" class="form-control form-control-lg" />
+                        <label class="form-label" for="password">Contraseña</label>
+                      </div>
+
+                      <h6 class="text-center mb-1" style="color: black">
+                        {{mensaje}}
+                      </h6>
+
+                      <button type="submit" style="background-color: #FF6084" class="btn btn-primary btn-block mb-3 mt-4 col-xl-4 btn btn-outline-light" href="{% url 'posteos' %}">Ingresar</button>
+
+                      <div class="text-center mb-3">
+                        <p>¿No sos miembro?      <a style="color: #FF6084" href="{% url 'registro' %}"> Regístrate</a></p>
+                      </div>
+
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  {% csrf_token %}
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title></title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg fixed-bottom" style="background-color: #FF6084;">
+        <div class="container-fluid px-4 px-lg-12">
+            <a class="navbar-brand" style="color: white" href="{% url 'posteos' %}">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" style="color: white; margin-right: 0.5cm; margin-left: 0.5cm"  href="{% url 'crearPosteo' %}">Postear</a></li>
+                  <li class="nav-item"><a class="nav-link" style="color: white; margin-right: 0.5cm; margin-left: 0.5cm"  href="{% url 'perfil' %}">Perfil</a></li>
+              </ul> 
+              <div class="col-md-9"></div>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><a class="nav-link" style="color: white" href="{% url 'logout' %}">Cerrar sesión</a></li>
+              </ul>
+          </div>
+        </div>
+    </nav>
+
+
+<section class="vh-100" style="background-color: #FF6084">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100" style="text-align: center">
+      <div class="col-xl-7">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+ <div class="card-body text-center" style="height: 13cm; margin-top:0.5cm; margin-bottom:0.7cm; margin-left:1.2cm; margin-right:1.2cm ">
+ 
+  <h3 class="mb-4">Editar Post</h3>
+
+  <form method="POST" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
+      {% csrf_token %}
+  
+    <section>
+
+    <div class="input-group mb-1 col-xl-7 justify-content-center align-items-center">
+      <div style="margin-right:1cm; width:6cm">
+      {% csrf_token %}
+
+      <input type="text" name="titulo" class="form-control form-control" />
+      <label class="form-label" for="titulo" >Título</label>
+      </div>
+
+      <div style="width:6cm">
+      {% csrf_token %}
+      <input type="text" name="subtitulo" class="form-control form-control" />
+      <label class="form-label" for="subtitulo" >Subtítulo</label>
+      </div>
+    </div>
+
+   </section>
+    
+    <div class="form-outline col-xl-8 justify-content-center align-items-center; mb-2" style="width:13.7cm">
+      {% csrf_token %}
+      <input type="text" name="cuerpo" class="form-control form-control" style="height:2.5cm" />
+      <label class="form-label" for="cuerpo" >Descripción</label>
+    </div>
+  
+    <section>
+
+      <div class="input-group mb-1 col-xl-7 justify-content-center align-items-center">
+        <div style="margin-right:1cm; width:6cm">
+        {% csrf_token %}
+  
+        <input type="text" name="autor" class="form-control form-control" />
+        <label class="form-label" for="autor" >Autor</label>
+        </div>
+  
+        <div style="width:6cm">
+        {% csrf_token %}
+        <input type="date" name="fecha" class="form-control form-control" />
+        <label class="form-label" for="fecha" >Fecha</label>
+        </div>
+      </div>
+  
+     </section>
+
+     <div class="form-outline col-xl-8 justify-content-center align-items-center; mb-1" style="width:13.7cm">
+      {% csrf_token %}
+     <input type="file" name="imagen" class="form-control form-control" />
+        <label class="form-label mt-1" for="imagen">Imagen</label>
+     </div>
+     
+     <h6 class="text-center mb-2" style="color: black">
+      {{mensaje}}
+    </h6>
+   
+  <section>
+    <button type="submit" style="background-color: #FF6084; color:white; width:3cm" class="btn btn-primary btn-block mb-2 mt-1 btn btn-outline-light">Guardar</button>
+  </section>
+  </div>
+  </div>
+  </div>
+ </div>
+</div>
+</section>
+<body>
+</html>

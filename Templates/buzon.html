@@ -1,0 +1,34 @@
+{% extends "mensajeria.html" %}
+
+{% load static %}
+{% csrf_token %}
+
+{% block contenidoQueCambia2 %}
+<section class="vh-100" style="background-image: url('../../static/assets/img/chat.jpg')">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100" style="text-align: center">
+        <div class="col-xl-4">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+   <div class="card-body mt-3 text-center" style="height: 13cm">
+
+    <h3 class="mb-5">Buzón de entrada</h3>
+
+    {% for mensaje in email_receptor %}
+        
+    <dl>
+        <dt><h5>De: {{mensaje.emisor}}</h5></dt>
+    
+        <dd>{{ mensaje.mensaje }}</dd>
+    </dl>
+
+    {% endfor %}
+    
+      
+      
+    </div>
+    </div>
+    </div>
+   </div>
+  </div>
+ </section>
+{% endblock %}

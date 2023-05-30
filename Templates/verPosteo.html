@@ -1,0 +1,41 @@
+{% extends "posteos.html" %}
+
+{% load static %}
+{% csrf_token %}
+
+{% block contenidoQueCambia %}
+
+
+<section class="vh-100" style="background-image: url('/static/assets/img/nav.jpg')">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100" style="text-align: center">
+        <div class="col-xl-6">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+           <div class="card-body text-center" style="height: 13cm; margin-top:0.7cm; margin-bottom:0.5cm; margin-left:1.1cm; margin-right:0.7cm ">
+            {% for posteo in posteos %}
+            <h1 class="mb-3 mt-2">{{posteo.titulo}}</h1>
+            <h3 class="mb-3">{{posteo.subtitulo}}</h3>
+            <h6 class="mb-3">Creado por {{posteo.autor}} - {{posteo.fecha}}</h>
+            <h6 class="card-body text-left; mb-2" style="font-size:0.4cm; text-align: left">{{posteo.cuerpo}}</h6>
+            <img src="{{ posteo.imagen.url }}" width=130px" class="mb-4">
+            
+            {% if request.user.username == posteo.autor %}
+            <section>
+        
+              <button style="background-color: #FF6084; color:white; margin-right:0.4cm; width:3cm" class="btn btn-primary btn-block mb-2 btn btn-outline-light"><a style="color:white; text-decoration:none" href="{% url 'editarPosteo' posteo.id%}">Editar</a></button>
+              <button style="background-color: #FF6084; width:3cm" class="btn btn-primary mb-2 btn btn-outline-light"><a style="color:white; text-decoration:none" href="{% url 'eliminarPosteo' posteo.id%}">Eliminar</a></button>
+              
+            </section>
+            {% endif %}
+
+            {% endfor %}
+
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>
+
+{% endblock %}
